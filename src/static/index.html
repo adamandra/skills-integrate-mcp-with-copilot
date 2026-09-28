@@ -8,9 +8,32 @@
   </head>
   <body>
     <header>
+      <button id="teacher-account-button" class="teacher-account-button" type="button" aria-label="Teacher login">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="8" r="3.5"></circle>
+          <path d="M5 20a7 7 0 0 1 14 0"></path>
+        </svg>
+        <span id="teacher-account-label">Teacher login</span>
+      </button>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
     </header>
+
+    <dialog id="teacher-dialog" aria-labelledby="teacher-dialog-title">
+      <div class="dialog-header">
+        <h3 id="teacher-dialog-title">Teacher access</h3>
+        <button id="teacher-dialog-close" class="dialog-close" type="button" aria-label="Close">×</button>
+      </div>
+      <form id="teacher-login-form" class="teacher-login-form">
+        <label for="teacher-username">Username</label>
+        <input id="teacher-username" name="username" autocomplete="username" required />
+        <label for="teacher-password">Password</label>
+        <input id="teacher-password" name="password" type="password" autocomplete="current-password" required />
+        <button type="submit">Sign in</button>
+      </form>
+      <button id="teacher-logout-button" class="hidden" type="button">Sign out</button>
+      <p id="teacher-auth-message" class="hidden" role="status"></p>
+    </dialog>
 
     <main>
       <section id="activities-container">
@@ -21,8 +44,8 @@
         </div>
       </section>
 
-      <section id="signup-container">
-        <h3>Sign Up for an Activity</h3>
+      <section id="signup-container" class="hidden">
+        <h3>Register a Student</h3>
         <form id="signup-form">
           <div class="form-group">
             <label for="email">Student Email:</label>
