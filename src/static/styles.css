@@ -16,12 +16,92 @@ body {
 }
 
 header {
+  position: relative;
   text-align: center;
-  padding: 20px 0;
+  padding: 64px 20px 20px;
   margin-bottom: 30px;
   background-color: #1a237e;
   color: white;
   border-radius: 5px;
+}
+
+.teacher-account-button {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: transparent;
+  color: white;
+}
+
+.teacher-account-button:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.teacher-account-button svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+
+#teacher-dialog {
+  width: min(420px, calc(100% - 32px));
+  margin: auto;
+  padding: 22px;
+  border: 1px solid #d5d9e0;
+  border-radius: 6px;
+  color: #333;
+}
+
+#teacher-dialog::backdrop {
+  background: rgba(12, 18, 40, 0.55);
+}
+
+.dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.dialog-header h3 {
+  color: #1a237e;
+}
+
+.dialog-close {
+  padding: 2px 8px;
+  background: transparent;
+  color: #333;
+  font-size: 24px;
+}
+
+.teacher-login-form {
+  display: grid;
+  gap: 10px;
+}
+
+.teacher-login-form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font: inherit;
+}
+
+.teacher-login-form button,
+#teacher-logout-button {
+  margin-top: 6px;
+}
+
+#teacher-auth-message {
+  margin-top: 12px;
+  padding: 8px;
 }
 
 header h1 {
@@ -197,4 +277,14 @@ footer {
   margin-top: 30px;
   padding: 20px;
   color: #666;
+}
+
+@media (max-width: 480px) {
+  header {
+    padding-top: 66px;
+  }
+
+  .teacher-account-button {
+    right: 10px;
+  }
 }
